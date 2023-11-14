@@ -41,15 +41,15 @@ include('protect.php');
                     <span class="link-name">Tela inicial</span>
                 </a></li>
                 <li><a href="perfil.php">
-                    <i class="fa-regular fa-user"></i>
+                    <i class="uil uil-user"></i>
                     <span class="link-name">Editar Perfil</span>
                 </a></li>
                 <li><a href="appointment.php">
-                    <i class="uil uil-chart"></i>
+                    <i class="uil uil-schedule"></i>
                     <span class="link-name">Consultas Marcadas</span>
                 </a></li>
                 <li><a href="treinos/treino.html">
-                    <i class="uil uil-thumbs-up"></i>
+                    <i class="uil uil-book-medical"></i>
                     <span class="link-name">Adicionar Treinos</span>
                 </a></li>
             </ul>
