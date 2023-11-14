@@ -2,16 +2,17 @@
 include('../../conexões/db.php');
 include("../../conexões/protect.php");
 $id=$_SESSION['id'];
-$sql = "SELECT * FROM `logind` WHERE `doctorid`= $id;";
+$sql = "SELECT * FROM `loginc` WHERE `clientid`= $id;";
 $execute1 = mysqli_query($con,$sql);
 		if($execute1)
 		{
 			$data = mysqli_fetch_assoc($execute1);
-			$doctorname=$data['doctorname'];
-			$doctoremail=$data['doctoremail'];
+			$clientname=$data['clientname'];
+			$clientemail=$data['clientemail'];
 			$phoneno=$data['phoneno'];
-			$speciality=$data['speciality'];
-			$experience=$data['experience'];
+			$dob=$data['dob'];
+			$bg=$data['bloodgroup'];
+			$address=$data['address'];
 			$age=$data['age'];
 			$sex=$data['sex'];
 		}
@@ -45,14 +46,14 @@ $execute1 = mysqli_query($con,$sql);
 	<div class="container-fluid">
 <form action="update.php" method="POST" enctype="multipart/form-data" class="my-5 w-50 mx-auto myform"> 
 <div class="textfield" >
-    <label>Digite o nome do Doutor</label>
+    <label>Digite o nome do Paciente</label>
 	<div class="box">
-    <input type="text" class="form-control" name="name" required require value = <?php echo $doctorname?>>
+    <input type="text" class="form-control" name="name" required require value = <?php echo $clientname?>>
   </div>
   <div class="textfield" >
     <label>Digite o email</label>
 	<div class="box">
-    <input type="text" class="form-control" name="email" required require value = <?php echo $doctoremail?>>
+    <input type="text" class="form-control" name="email" required require value = <?php echo $clientemail?>>
   </div>
 
   <div class="textfield" >
@@ -60,16 +61,21 @@ $execute1 = mysqli_query($con,$sql);
 	<div class="box">
     <input type="text" class="form-control" required name="phone_no" value = <?php echo $phoneno?>>
   </div>
+  <div class="textfield" >
+    <label>Data de Nascimento</label>
+	<div class="box">
+    <input type="text" class="form-control" required name="dob" value = <?php echo $dob?>>
+  </div>
 
   <div class="textfield" >
-    <label>Especialidade</label>
+    <label>Tipo Sanguineo</label>
 	<div class="box">
-    <input type="text" class="form-control" required name="special" value = <?php echo $speciality?>>
+    <input type="text" class="form-control" required name="bg" value = <?php echo $bg?>>
   </div>
   <div class="textfield" >
-    <label>Experiência</label>
+    <label>Endereço</label>
 	<div class="box">
-    <input type="text" class="form-control" required name="exp" value = <?php echo $experience?>>
+    <input type="text" class="form-control" required name="address" value = <?php echo $address?>>
   </div>
   <div class="textfield" >
     <label>Idade</label>

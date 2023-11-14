@@ -1,19 +1,20 @@
 <?php 
 session_start();
-require("db.php");
+require("../../conexões/db.php");
 $u=$_SESSION["nome"];
 $sql="SELECT * FROM `loginc` WHERE clientname='$u'";
     $res = mysqli_query($con, $sql);
-    if($res)
-    {   
-        if (mysqli_num_rows($res)) {
-            while($row = mysqli_fetch_assoc($res)) {
-                $uid=$row["clientid"];
-                
-            }
+
+$uid = null; // Initializing $uid
+if ($res) {
+    if (mysqli_num_rows($res)) {
+        while ($row = mysqli_fetch_assoc($res)) {
+            $uid = $row["clientid"];
         }
     }
-$_SESSION["clientid"]= $uid;
+}
+$_SESSION["clientid"] = $uid; // Now $uid is defined
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -32,7 +33,7 @@ $_SESSION["clientid"]= $uid;
         </div>
         <div class="col-sm-2">
             <h3 class="mr-0">Olá, <?php echo $_SESSION['nome']; ?>!</h3>
-            <a href="dashboard.php" class="btn btn-primary ">Voltar para Tela Inicial</a>
+            <a href="../dashboard.php" class="btn btn-primary ">Voltar para Tela Inicial</a>
         </div>
     </div>
 </div>
@@ -41,7 +42,6 @@ $_SESSION["clientid"]= $uid;
         <h2 class="pt-3 pb-3">Consultas do paciente</h2>
     </div>
 </div>
-
 <div class="app">
     <div class="today">
         <div class="title">

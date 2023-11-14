@@ -13,9 +13,9 @@
 	
 <?php
 
-include('header.php');
-include('conexao.php');
-$_SESSION['appoinment_id']=$_GET['id'];
+include('../../conexões/header.php');
+include('../../conexões/conexao.php');
+$_SESSION['appointmentid']=$_GET['id'];
 $_SESSION['client_id']=$_GET['clientid'];
 ?>
 <!--  --------------------------------------------showing date and time-=================--------------------       -->
@@ -46,9 +46,9 @@ $_SESSION['client_id']=$_GET['clientid'];
 	</tr>
 	</thead>
 <?php
-include('db.php');
+include('../../conexões/db.php');
 $id = $_GET['id'];
-$_SESSION['appoinment_id'] = $id ;
+$_SESSION['appointmentid'] = $id ;
 $client_id=$_GET['clientid'];
 	$qry1 =  "SELECT * FROM `appointment` WHERE `appointmentid`=$id;";
 	$ans1 = mysqli_query($con,$qry1);

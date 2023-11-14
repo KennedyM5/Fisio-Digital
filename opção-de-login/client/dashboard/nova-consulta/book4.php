@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("db.php");
+include("../../conexões/db.php");
 $di=$_SESSION["docid"];
 $sql="SELECT * FROM `logind` WHERE doctorid='$di'";
 $res = mysqli_query($con, $sql);
@@ -84,7 +84,7 @@ if(isset($_POST['submit'])){
         $bookings[]=$timeslot;
         $stmt->close();
         $mysqli->close();
-        header("Location: dashboard.php");
+        header("Location: ../dashboard.php");
         } 
     }
     

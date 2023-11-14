@@ -16,18 +16,19 @@ if(isset($_POST['submit']))
 			include('../../conexões/db.php');
 			include("../../conexões/protect.php");
 			
-			$doctorname=$_POST['name'];
-			$doctoremail=$_POST['email'];
+			$clientname=$_POST['name'];
+			$clientemail=$_POST['email'];
 			$phoneno=$_POST['phone_no'];
-			$speciality=$_POST['special'];
-			$experience=$_POST['exp'];
+			$dob=$_POST['dob'];
+			$bg=$_POST['bg'];
+			$address=$_POST['address'];
 			$age=$_POST['age'];
 			$sex=$_POST['sex'];
 
 			echo $id=$_SESSION['id'];
 
 		
-		$sql = "UPDATE `logind` SET `doctorname` = '$doctorname' , `doctoremail`= '$doctoremail' , `phoneno`='$phoneno' ,`speciality`='$speciality' , `experience`='$experience' ,`age`='$age' ,`sex`='$sex' WHERE `doctorid` = $id;";
+		$sql = "UPDATE `loginc` SET clientname='$clientname', clientemail='$clientemail', phoneno='$phoneno', dob='$dob', bloodgroup='$bg' , address='$address', age='$age', sex='$sex' WHERE clientid = $id;";
 		$execute1 = mysqli_query($con,$sql);
 		if($execute1)
 		{
@@ -55,7 +56,7 @@ if(isset($_POST['submit']))
 		
 		
 		
-		$sql = "SELECT * FROM `logind` WHERE `doctorid`= $id;";
+		$sql = "SELECT * FROM `loginc` WHERE `clientid`= $id;";
 		$execute1 = mysqli_query($con,$sql);
 		if($execute1)
 		{
@@ -64,11 +65,11 @@ if(isset($_POST['submit']))
 			print_r($data);
 			?>
 			</pre><?php
-			$doctorname=$data['doctorname'];
-			$doctoremail=$data['doctoremail'];
+			$clientname=$data['clientname'];
+			$clientemail=$data['clientemail'];
 			$phoneno=$data['phoneno'];
-			$speciality=$data['speciality'];
-			$experience=$data['experience'];
+			$dob=$data['dob'];
+			$bg=$data['bg'];
 			$age=$data['age'];
 			$sex=$data['sex'];
 }

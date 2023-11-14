@@ -1,6 +1,6 @@
 <?php
 session_start();
-require('db.php');
+require('../../conexões/db.php');
 if(isset($_GET["selectclinic"]))
 {
     $_SESSION["clinicid"]=$row['clinicid'];

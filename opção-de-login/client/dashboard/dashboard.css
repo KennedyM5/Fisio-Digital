@@ -9,15 +9,15 @@
 
 :root{
     /* ===== Colors ===== */
-    --primary-color: #0E4BF1;
-    --panel-color: #FFF;
-    --text-color: #000;
-    --black-light-color: #707070;
+    --primary-color: #5c8a76;
+    --panel-color: #113838;
+    --text-color: #ffffff;
+    --black-light-color: #77ffc0;
     --border-color: #e6e5e5;
     --toggle-color: #DDD;
-    --box1-color: #4DA3FF;
-    --box2-color: #FFE6AC;
-    --box3-color: #E7D1FC;
+    --box1-color: #54b889;
+    --box2-color:  #3c8865;
+    --box3-color: #285c44;
     --title-icon-color: #fff;
     
     /* ====== Transition ====== */

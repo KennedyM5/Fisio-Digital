@@ -11,8 +11,8 @@
 <body>
 	
 <?php
-include('conexao.php');
-include('header.php');
+include('../../conexões/conexao.php');
+include('../../conexões/header.php');
 ?>
 <!--  --------------------------------------------showing date and time-=================--------------------       -->
 <h2 class="pt-3 pb-3 text-center">Choose Laboratory for Patient report </h2>
@@ -27,7 +27,7 @@ include('header.php');
 <hr style="border:2px solid;">
 <div class="container">
 <?php
-include('db.php');
+include('../../conexões/db.php');
 $allergy = $_GET['allergy'];
 $prescription =$_GET['description'];
 $report =$_GET['report'];
@@ -45,7 +45,7 @@ $ans1 = mysqli_query($con,$qry);
 	$ans2 = mysqli_query($con,$qry2);
 	if($ans1 && $ans2)
 	{
-		echo "<h5 class='alert alert-danger'> Details Updated now select labs for report </h5>";
+		echo "<h5 class='alert alert-danger'> Details Updated</h5>";
 	}
 	else
 	{
@@ -86,8 +86,12 @@ if($report=="yes")
 	</form>
 <?php	
 }else{
-	
-}
+
+?>
+
+<a href="../dashboard.php">voltar</a>
+
+<<?php }
 ?>
 </div>
 

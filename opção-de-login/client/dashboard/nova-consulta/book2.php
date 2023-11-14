@@ -4,7 +4,7 @@ if(isset($_GET["selectclinic"]) && !empty($_GET["clinicid"]))
 {
     $_SESSION["clinicid"]=$_GET['clinicid'];
 }
-require("db.php");
+require("../../conexões/db.php");
 
 ?>
 <!DOCTYPE html>
