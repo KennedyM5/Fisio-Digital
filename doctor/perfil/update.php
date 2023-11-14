@@ -19,22 +19,21 @@ if(isset($_POST['submit']))
 			$doctorname=$_POST['name'];
 			$phoneno=$_POST['phone_no'];
 			$speciality=$_POST['special'];
-			$degree=$_POST['degree'];
 			$experience=$_POST['exp'];
 			$age=$_POST['age'];
-			$fee=$_POST['fee'];
+			$sex=$_POST['sex'];
 
 			echo $id=$_SESSION['id'];
 
 		
-		$sql = "UPDATE `logind` SET `doctorname` = '$doctorname' ,`phoneno`='$phoneno' ,`speciality`='$speciality' ,`degree`='$degree' , `experience`='$experience' ,`age`='$age' ,`fee`='$fee' WHERE `doctorid` = $id;";
+		$sql = "UPDATE `logind` SET `doctorname` = '$doctorname' ,`phoneno`='$phoneno' ,`speciality`='$speciality' , `experience`='$experience' ,`age`='$age' ,`sex`='$sex' WHERE `doctorid` = $id;";
 		$execute1 = mysqli_query($con,$sql);
 		if($execute1)
 		{
 			?>
 			<script>
 			alert("Atualizado com sucesso");
-			window.open('dashboard.php','_SELF');
+			window.open('updateprofile.php','_SELF');
 			</script>
 			<?php
 			
