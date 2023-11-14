@@ -1,126 +1,106 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap');
+
 * {
     padding: 0;
     margin: 0;
     font-family: 'Inter', sans-serif;
 }
 
-header {
+body {
     background-color: #113838;
-    box-shadow: 0px 3px 10px #464646;
 }
 
-.nav-bar {
+header {
+    position: fixed;
+    right: 0%;
+    top: 0%;
+    z-index: 1000;
+    width: 100%;
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    padding: 1.5rem 6rem;
+    padding: 20px 50px 1px 10px;
+    background: #113838;
 }
 
-.logo {
+.logo-nome-fisio {
+    margin-left: 70px;
+    width: 20vw;
+    height: auto;
+}
+
+.navlist {
     display: flex;
-    align-items: center;
 }
 
-.logo h1 {
-    color: #ffffff;
+.navlist a {
+    color: aliceblue;
+    margin-left: 60px;
+    font-size: 15px;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: all .55s ease;
 }
 
-.nav-list {
-    display: flex;
-    align-items: center;
+.navlist a:hover {
+    border-bottom: 2px solid white;
 }
 
-.nav-list ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-}
-
-.nav-item {
-    margin: 0 15px;
-}
-
-.nav-link {
-    text-decoration: none;
-    font-size: 1.15rem;
-    color: #fff;
-    font-weight: 400;
-}
-
-.login-button button {
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    background-color: #0187a7;
-}
-
-.login-button button a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: 500;
-    font-size: 1.1rem;
-}
-
-.mobile-menu-icon {
+#menu-icon {
+    color: aliceblue;
+    font-size: 35px;
+    z-index: 10001;
+    cursor: pointer;
     display: none;
 }
 
-.mobile-menu {
-    display: none;
+.oplogin {
+    color: #79e3bc;
+    margin-top: 100px;
+    margin-left: 700px;
 }
 
 .row {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.row h2 {
+    color: #fff;
+    margin-left: 70px;
+}
+
+.row a {
+    margin-top: 15px;
+    display: inline-block;
+    color: aliceblue;
+    background: #79e3bcc0;
+    padding: 12px 0.1px;
+    line-height: 2;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 15px;
+    text-transform: uppercase;
+    transition: all .55s ease;
+    margin-left: 70px;
+}
+
+.row a:hover {
+    background: transparent;
+    border: 1px solid white;
+    transform: translate(10px);
+    margin-left: 70px;
+}
+
+.row img {
+    width: 450px;
+    height: auto;
+    margin-left: 70px;
 }
 
 .col-sm {
-    flex-basis: 48%; /* Ajuste o valor conforme necessário para o espaçamento desejado */
-    text-align: left; /* Alinha o texto à esquerda */
+    flex-basis: 48%;
+    text-align: left;
     padding: 20px;
-}
-
-/* Estilos para os botões */
-.btn {
-    width: 100%;
-}
-
-@media screen and (max-width: 730px) {
-    .nav-bar {
-        padding: 1.5rem 4rem;
-    }
-    .nav-item {
-        display: none;
-    }
-    .login-button {
-        display: none;
-    }
-    .mobile-menu-icon {
-        display: block;
-    }
-    .mobile-menu-icon button {
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-    }
-    .mobile-menu ul {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        padding-bottom: 1rem;
-    }
-    .mobile-menu .nav-item {
-        display: block;
-        padding-top: 1.2rem;
-    }
-    .mobile-menu .login-button {
-        display: block;
-        padding: 1rem 2rem;
-    }
-    .mobile-menu .login-button button {
-        width: 100%;
-    }
-    .open {
-        display: block;
-    }
 }

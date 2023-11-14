@@ -208,6 +208,12 @@ span{
 	text-align: center;
 	margin-bottom: 2rem;
 }
+.lattes{
+	margin-left: -70rem;
+	margin-top: 1rem;
+	font-size: 1.4rem;
+	color: white;
+}
 .testimonial-box .swiper-button-next,
 .testimonial-box .swiper-button-prev{
 	color: #79e3bd;
