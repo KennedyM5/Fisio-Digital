@@ -12,9 +12,9 @@
 
 if(isset($_POST['submit']))
 	{
-			include("header.php");
-			include('db.php');
-			include("protect.php");
+			include("../../conexões/header.php");
+			include('../../conexões/db.php');
+			include("../../conexões/protect.php");
 			
 			$doctorname=$_POST['name'];
 			$phoneno=$_POST['phone_no'];
@@ -22,19 +22,19 @@ if(isset($_POST['submit']))
 			$degree=$_POST['degree'];
 			$experience=$_POST['exp'];
 			$age=$_POST['age'];
-			$fee=$_POST['fee'];
+			$sex=$_POST['sex'];
 
 			echo $id=$_SESSION['id'];
 
 		
-		$sql = "UPDATE `logind` SET `doctorname` = '$doctorname' ,`phoneno`='$phoneno' ,`speciality`='$speciality' ,`degree`='$degree' , `experience`='$experience' ,`age`='$age' ,`fee`='$fee' WHERE `doctorid` = $id;";
+		$sql = "UPDATE `logind` SET `doctorname` = '$doctorname' ,`phoneno`='$phoneno' ,`speciality`='$speciality' ,`degree`='$degree' , `experience`='$experience' ,`age`='$age' ,`sex`='$sex' WHERE `doctorid` = $id;";
 		$execute1 = mysqli_query($con,$sql);
 		if($execute1)
 		{
 			?>
 			<script>
 			alert("Atualizado com sucesso");
-			window.open('dashboard.php','_SELF');
+			window.open('../dashboard.php','_SELF');
 			</script>
 			<?php
 			
@@ -71,7 +71,7 @@ if(isset($_POST['submit']))
 			$degre=$data['degree'];
 			$experience=$data['experience'];
 			$age=$data['age'];
-			$fee=$data['fee'];
+			$sex=$data['sex'];
 }
 
 		

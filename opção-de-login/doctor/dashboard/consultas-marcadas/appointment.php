@@ -1,6 +1,6 @@
 <?php
 //include auth_session.php file on all user panel pages
-	include("protect.php");
+	include("../../conexões/protect.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -15,7 +15,7 @@
 
 <?php
 
-include('db.php');
+include('../../conexões/db.php');
 $doctorid = $_SESSION['id'];
 
 $query    = "SELECT * FROM `logind` WHERE doctorid=$doctorid;";
@@ -47,7 +47,7 @@ function findclientname($id)
         </div>
         <div class="col-sm-2">
 		<h3 class="mr-0">Olá, <?php echo $doctorname ?>!</h3>
-            <a href="logout.php" class="btn btn-primary ">Sair</a>
+            <a href="../../logout.php" class="btn btn-primary ">Sair</a>
         </div>
     </div>
 </div>
@@ -57,7 +57,7 @@ function findclientname($id)
     </div>
 </div>
 
-<?php include('header.php'); ?>
+<?php include('../../conexões/header.php'); ?>
 </div>
 
 
@@ -208,7 +208,6 @@ $qry1 =  "SELECT * FROM `appointment` WHERE `doctorid`='$doctorid'" ;
 			?><td><?php echo $data1['status'] ?></td><?php
 			?><td><?php echo $data1['report_need'] ?></td><?php
 			?><td><a href="editdetails.php?id=<?php echo $data1['appointmentid']?>&&name=<?php echo findclientname($data1['clientid'])?>&&clientid=<?php echo $data1['clientid'];?>"> Editar </a><?php
-			?><td><?php check_report($appid) ?></td><?php
 			
 		}
 	}

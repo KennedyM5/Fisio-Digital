@@ -1,6 +1,6 @@
 <?php
-include('db.php');
-include("protect.php");
+include('../../conexões/db.php');
+include("../../conexões/protect.php");
 $id=$_SESSION['id'];
 $sql = "SELECT * FROM `logind` WHERE `doctorid`= $id;";
 $execute1 = mysqli_query($con,$sql);
@@ -32,13 +32,7 @@ $execute1 = mysqli_query($con,$sql);
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Meu Perfil</title>
 	<link rel="shortcut icon" href="http://localhost/Fisio_Digital/src/images/favicon_32x32.png" type="image/x-icon">
-	<link rel="stylesheet" href="perfil.css">
-	<script src="perfil.js"></script>
-	<script>
-
-
-
-	</script>
+	<link rel="stylesheet" href="perf.css">
 </head>
 
 <body>
@@ -88,7 +82,7 @@ $execute1 = mysqli_query($con,$sql);
 </div>
 
 	<footer>
-		<button onclick="window.location.href = `../Dashboard.php`">Voltar</button>
+		<a href = "dashboard.php">Voltar</a>
 		<button type="submit" class="btn btn-primary"value="submit" name="submit">Enviar</button>
 		</form> 
 	</footer>

@@ -120,7 +120,7 @@ footer{
     display: flex;
     
     justify-content: center;
-    align-items: start;
+    align-items: center;
     padding: 30px 35px;
     
 }
@@ -139,7 +139,22 @@ footer button{
     border-radius: 8px;
     outline: none;
     text-transform: uppercase;
+}
 
+footer a{
+    margin: 1.5rem;
+    width: 10rem;
+    height: 3.5rem;
+    border: none;
+    color: #113838;
+    background: #77ffc0;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px #77ffc0;
+    font-weight: 800;
+    letter-spacing: 3px;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
 }
 
 

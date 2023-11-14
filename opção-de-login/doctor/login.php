@@ -1,7 +1,7 @@
 <?php 
 session_start();
 
-include('conexao.php');
+include('conexões/conexao.php');
 
 if(isset($_POST['usuario']) || isset($_POST['senha'])) {
 
@@ -30,7 +30,7 @@ if(isset($_POST['usuario']) || isset($_POST['senha'])) {
             $_SESSION['nome'] = $login['doctorname'];
             $_SESSION['senha'] = $login['doctorpassword'];
 
-            header("Location: dashboard.php");
+            header("Location: dashboard/dashboard.php");
 
         } else{
             echo "Falha ao logar! Usuário ou senha incorretos.";

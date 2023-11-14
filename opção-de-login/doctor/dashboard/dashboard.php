@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include('protect.php');
+include('../conexões/protect.php');
 //include auth_session.php file on all user panel pages
 ?>
 <!DOCTYPE html>
@@ -22,13 +22,13 @@ include('protect.php');
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
-	<link href="css/dashboard.css" rel="stylesheet">
+	<link href="dashboard.css" rel="stylesheet">
 </head>
 <body>
     <nav>
 	<div class="logo-name">
             <div class="logo-image">
-                <img src="../imagens/logo.png" alt="">
+                <img src="../../../imagens/logo.png" alt="">
             </div>
 
             <span class="logo_name">Fisio Digital</span>
@@ -40,11 +40,11 @@ include('protect.php');
                     <i class="uil uil-estate"></i>
                     <span class="link-name">Tela inicial</span>
                 </a></li>
-                <li><a href="perfil.php">
+                <li><a href="perfil/perfil.php">
                     <i class="uil uil-user"></i>
                     <span class="link-name">Editar Perfil</span>
                 </a></li>
-                <li><a href="appointment.php">
+                <li><a href="consultas-marcadas/appointment.php">
                     <i class="uil uil-schedule"></i>
                     <span class="link-name">Consultas Marcadas</span>
                 </a></li>
@@ -84,11 +84,11 @@ include('protect.php');
                 </div>
 
                 <div class="boxes">
-                    <a href="perfil.php" class="box box1">
+                    <a href="perfil/perfil.php" class="box box1">
                         <i class="fas fa-thumbs-up"></i>
                         <span class="text">Editar Perfil</span>
                     </a>
-                    <a href="appointment.php" class="box box2">
+                    <a href="consultas-marcadas/appointment.php" class="box box2">
                         <i class="fas fa-comments"></i>
                         <span class="text">Consultas Marcadas</span>
                     </a>

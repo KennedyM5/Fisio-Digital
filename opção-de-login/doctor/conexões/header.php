@@ -7,9 +7,7 @@
 	</head>
 <body>
 
-<a href="dashboard.php" class="btn btn-primary m-2">Tela inicial</a>
-<a href="updateprofile.php" class="btn btn-primary m-2">Atualizar Perfil</a>
-<a href="appointment.php" class="btn btn-primary m-2">Consultas</a>
+<a href="../dashboard.php" class="btn btn-primary m-2">Tela inicial</a>
 <!-- <a href="logout.php" class="btn btn-primary m-2">Logout</a> -->
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
