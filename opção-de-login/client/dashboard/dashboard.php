@@ -63,7 +63,7 @@ include('../conexões/protect.php');
             </ul>
             
             <ul class="logout-mode">
-                <li><a href="../logout.php">
+                <li><a href="../../menu.html">
                     <i class="uil uil-signout"></i>
                     <span class="link-name">Logout</span>
                 </a></li>

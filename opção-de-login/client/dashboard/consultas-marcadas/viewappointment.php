@@ -29,7 +29,7 @@ $_SESSION["clientid"] = $uid; // Now $uid is defined
 <div class="container-fluid pt-2 pb-2" style="background-color: #113838;">
     <div class="row">
         <div class="col-sm-10 ">
-            <img  width="200" class="ml-0 mt-2 mb-2" src="../consultas-marcadas/default_transparent.png">
+            <img  width="200" class="ml-0 mt-2 mb-2" src="../../../../imagens/default_transparent.png">
         </div>
         <div class="col-sm-2">
             <h3 class="mr-0 text-white">Olá, <?php echo $_SESSION['nome']; ?>!</h3>

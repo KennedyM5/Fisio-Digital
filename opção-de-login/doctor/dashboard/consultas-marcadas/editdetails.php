@@ -80,7 +80,7 @@ $client_id=$_GET['clientid'];
 <br>
 <br>
 
-<h4 class="text-center bg-info py-2">Escreva os novos detalhes abaixo</h4>
+<h4 class="text-center py-2" style="background-color: #79e3bd;">Escreva os novos detalhes abaixo</h4> 
 
 <form action="updating.php" class=" form w-50 mx-auto my-5  " method="get" name="login">
 	<div >
@@ -109,7 +109,7 @@ $client_id=$_GET['clientid'];
 	<input type ="hidden" value="<?php echo $id ?>" name="id">
 	<input type ="hidden" value="<?php echo $client_id ?>" name="clientid">
 
-	<button type="submit" class="btn btn-primary" value="submit" name="submit">Enviar dados complementares</button>
+	<button type="submit" class="btn btn-dark" value="submit" name="submit">Enviar dados complementares</button>
 </form>
 
 
