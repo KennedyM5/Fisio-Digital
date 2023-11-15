@@ -36,15 +36,15 @@ include('../conexões/protect.php');
 
         <div class="menu-items">
             <ul class="nav-links">
-                <li><a href="dashboard.php">
+                <li><a href="../../../index.html">
                     <i class="uil uil-estate"></i>
-                    <span class="link-name">Tela inicial</span>
+                    <span class="link-name">Tela Inicial</span>
                 </a></li>
                 <li><a href="perfil/perfil.php">
                     <i class="uil uil-user"></i>
                     <span class="link-name">Editar Perfil</span>
                 </a></li>
-                <li><a href="https://wa.me/55(SEU NUMERO)">
+                <li><a href="https://wa.me/5561998149548">
                     <i class="uil uil-comments"></i>
                     <span class="link-name">Chat</span>
                 </a></li>
@@ -58,12 +58,12 @@ include('../conexões/protect.php');
                 </a></li>
                 <li><a href="treinos/resumo_treino.html">
                     <i class="uil uil-book-medical"></i>
-                    <span class="link-name">Treinos</span>
+                    <span class="link-name">Ver Treinos</span>
                 </a></li>
             </ul>
             
             <ul class="logout-mode">
-                <li><a href="../logout.php">
+                <li><a href="../../menu.html">
                     <i class="uil uil-signout"></i>
                     <span class="link-name">Logout</span>
                 </a></li>
@@ -102,68 +102,49 @@ include('../conexões/protect.php');
                     </a>
                     <a href="treinos/resumo_treino.html" class="box box3">
                         <i class="fas fa-share"></i>
-                        <span class="text">Adicionar Treinos</span>
+                        <span class="text">Ver Treinos</span>
                     </a>
                 </div>
                 
             </div>
+<?php
+    include("../conexões/db.php");
+    $clientid = $_SESSION['id'];
 
+    $query    = "SELECT * FROM `loginc` WHERE clientid=$clientid;";
+    $result = mysqli_query($con, $query) or die(mysqli_error($con));
+    if($result)
+    {
+    $data = mysqli_fetch_assoc($result);
+    $clientname = $data['clientname'];
+    }
+?>
             <div class="activity">
                 <div class="title">
                     <i class="uil uil-clock-three"></i>
-                    <span class="text">Recent Activity</span>
+                    <span class="text">Olá, <?php echo $clientname ?>!</span>
                 </div>
 
                 <div class="activity-data">
                     <div class="data names">
-                        <span class="data-title">Name</span>
-                        <span class="data-list">Prem Shahi</span>
-                        <span class="data-list">Deepa Chand</span>
-                        <span class="data-list">Manisha Chand</span>
-                        <span class="data-list">Pratima Shahi</span>
-                        <span class="data-list">Man Shahi</span>
-                        <span class="data-list">Ganesh Chand</span>
-                        <span class="data-list">Bikash Chand</span>
+                        <span class="data-title">Como funciona os botões:</span>
+                        <span class="data-list">Tela inicial</span>
+                        <span class="data-list">Editar Perfil</span>
+                        <span class="data-list">Chat</span>
+                        <span class="data-list">Nova Consulta</span>
+                        <span class="data-list">Consultas Marcadas</span>
+                        <span class="data-list">Ver Treinos</span>
+                        <span class="data-list">Logout</span>
                     </div>
                     <div class="data email">
-                        <span class="data-title">Email</span>
-                        <span class="data-list">premshahi@gmail.com</span>
-                        <span class="data-list">deepachand@gmail.com</span>
-                        <span class="data-list">prakashhai@gmail.com</span>
-                        <span class="data-list">manishachand@gmail.com</span>
-                        <span class="data-list">pratimashhai@gmail.com</span>
-                        <span class="data-list">manshahi@gmail.com</span>
-                        <span class="data-list">ganeshchand@gmail.com</span>
-                    </div>
-                    <div class="data joined">
-                        <span class="data-title">Joined</span>
-                        <span class="data-list">2022-02-12</span>
-                        <span class="data-list">2022-02-12</span>
-                        <span class="data-list">2022-02-13</span>
-                        <span class="data-list">2022-02-13</span>
-                        <span class="data-list">2022-02-14</span>
-                        <span class="data-list">2022-02-14</span>
-                        <span class="data-list">2022-02-15</span>
-                    </div>
-                    <div class="data type">
-                        <span class="data-title">Type</span>
-                        <span class="data-list">New</span>
-                        <span class="data-list">Member</span>
-                        <span class="data-list">Member</span>
-                        <span class="data-list">New</span>
-                        <span class="data-list">Member</span>
-                        <span class="data-list">New</span>
-                        <span class="data-list">Member</span>
-                    </div>
-                    <div class="data status">
-                        <span class="data-title">Status</span>
-                        <span class="data-list">Liked</span>
-                        <span class="data-list">Liked</span>
-                        <span class="data-list">Liked</span>
-                        <span class="data-list">Liked</span>
-                        <span class="data-list">Liked</span>
-                        <span class="data-list">Liked</span>
-                        <span class="data-list">Liked</span>
+                        <span class="data-title"></span>
+                        <span class="data-list">Te redireciona para a tela inicial da fisio digital.</span>
+                        <span class="data-list">Permite que você altere suas informações pessoais.</span>
+                        <span class="data-list">Possibilita o contato direto com a secretária.</span>
+                        <span class="data-list">Página onde será possivel a marcação de consultas.</span>
+                        <span class="data-list">Todas as consultas, futuras, passadas e as do dia atual.</span>
+                        <span class="data-list">Permite que o paciente veja os treinos cadastrados pelo Fisioterapeuta.</span>
+                        <span class="data-list">Te redireciona para a tela de login do doutor e do paciente.</span>
                     </div>
                 </div>
             </div>
@@ -173,61 +154,5 @@ include('../conexões/protect.php');
     <script src="../js/script2.js"></script>
 </body>
 </html>
-<?php
-	include('header.php');
-    /*
-    include('db.php');
-    $id = $_SESSION['id'];
-    
-    $query    = "SELECT * FROM logind WHERE id=$doctorid;";
-    $result = mysqli_query($con, $query);
-    if($result)
-    {
-        $data = mysqli_fetch_assoc($result);
-        $usuario = $data['doctorname'];
-        if($data['profile'])
-        {
-            $image=$data['profile'];
-        }
-        else
-        {
-            $image="default.jpg";
-        }
-    }
-    */
-?>
-<h1>Data : <?php echo date("d-m-Y"); ?></h1>
-<h1>Horário Atual : <?php 
-    date_default_timezone_set('America/Sao_Paulo');
-    $currentTime = date('h:i:s A', time());
-    echo $currentTime;
-?></h1>
-
-<?php
-    function findclientname($id)
-    {
-        $conn =  mysqli_connect("localhost","root","","fisio digital");
-        $qry =  "SELECT * FROM loginc WHERE id='$id'";
-        $ans = mysqli_query($conn,$qry);
-        if($ans)
-        {
-            $nam=mysqli_fetch_assoc($ans);
-            return $nam['usuario'];
-        }
-    }
-    
-    function finddoctorname($id)
-    {
-        $conn =  mysqli_connect("localhost","root","","fisio digital");
-        $qry =  "SELECT * FROM logind WHERE id=$id";
-        $ans = mysqli_query($conn,$qry);
-    
-        if($ans)
-        {
-            $nam=mysqli_fetch_assoc($ans);
-            return $nam['usuario'];
-        }
-    }
-?>
 </body>
 </html>

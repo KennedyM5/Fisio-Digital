@@ -1,20 +1,15 @@
 <?php 
 session_start();
 require("../../conexões/db.php");
-$u=$_SESSION["nome"];
-$sql="SELECT * FROM `loginc` WHERE clientname='$u'";
-    $res = mysqli_query($con, $sql);
+$clientid = $_SESSION['id'];
 
-$uid = null; // Initializing $uid
-if ($res) {
-    if (mysqli_num_rows($res)) {
-        while ($row = mysqli_fetch_assoc($res)) {
-            $uid = $row["clientid"];
-        }
-    }
+$query    = "SELECT * FROM `loginc` WHERE clientid=$clientid;";
+$result = mysqli_query($con, $query) or die(mysqli_error($con));
+if($result)
+{
+$data = mysqli_fetch_assoc($result);
+$clientname = $data['clientname'];
 }
-$_SESSION["clientid"] = $uid; // Now $uid is defined
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -32,7 +27,7 @@ $_SESSION["clientid"] = $uid; // Now $uid is defined
             <img  width="150" class="ml-0 mt-2 mb-2" src="../images/logo.png">
         </div>
         <div class="col-sm-2">
-            <h3 class="mr-0">Olá, <?php echo $_SESSION['nome']; ?>!</h3>
+            <h3 class="mr-0">Olá, <?php echo $clientname; ?>!</h3>
             <a href="../dashboard.php" class="btn btn-primary ">Voltar para Tela Inicial</a>
         </div>
     </div>
