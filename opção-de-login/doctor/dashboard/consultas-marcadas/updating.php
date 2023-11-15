@@ -19,8 +19,8 @@ include('../../conexões/header.php');
 <hr style="border:2px solid; width:50%;	">
 <h4>Date : <?php echo date("d-m-Y"); ?><h4>
 
-<h4>Time : <?php date_default_timezone_set('Asia/Kolkata');
-		$currentTime = date( 'h:i:s A', time () );
+<h4>Time : <?php date_default_timezone_set('America/Sao_Paulo');
+    $currentTime = date('h:i:s A', time());
 		echo $currentTime;
 	?></h4>
 <br>

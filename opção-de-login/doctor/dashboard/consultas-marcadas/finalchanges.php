@@ -2,15 +2,16 @@
 include("../../conexões/protect.php");
 include('../../conexões/db.php');
 $clinicid = $_GET['value'];
-$doctor_id = $_SESSION['docid'];
+$doctorid = $_SESSION['id'];
 $appointmentid =$_SESSION['id'];
-$clientid =$_SESSION['clientid'];
-$date = date('d:m:Y');
+$client_id =$_SESSION['id'];
+$date = date("Y-m-d");
 if(isset($_GET['lab_select']))
 {
+	$qry = "INSERT INTO reports (appointmentid, doctorid, clientid, clinicid, date_of_request) VALUES ($appointmentid, $doctorid , $client_id, $clinicid, $date)";
+}	
+	$execute = mysqli_query($con, $qry);
 	
-	$qry = "INSERT INTO reports (appointmentid, doctorid, clientid, clinicid, report, report_type, date_of_request, report_status) VALUES (?, ?, ?, ?, ?, ?, ?)";
-}	$execute = mysqli_query($con, $qry);
 	if($execute)
 	{
 		
