@@ -44,6 +44,10 @@ include('../conexões/protect.php');
                     <i class="uil uil-user"></i>
                     <span class="link-name">Editar Perfil</span>
                 </a></li>
+                <li><a href="https://wa.me/55(SEU NUMERO)">
+                    <i class="uil uil-comments"></i>
+                    <span class="link-name">Chat</span>
+                </a></li>
                 <li><a href="nova-consulta/book1.php">
                     <i class="uil uil-calender"></i>
                     <span class="link-name">Nova Consulta</span>
