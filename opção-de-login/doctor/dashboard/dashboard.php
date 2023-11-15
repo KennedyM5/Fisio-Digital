@@ -100,7 +100,7 @@ include('../conexões/db.php');
                 </div>
                 
             </div>
-            <?php
+<?php
 
     include('../conexões/db.php');
     $doctorid = $_SESSION['id'];
@@ -116,7 +116,7 @@ include('../conexões/db.php');
             <div class="activity">
                 <div class="title">
                     <i class="uil uil-clock-three"></i>
-                    <span class="text">Olá Doutor(a) <?php echo $doctorname ?></span>
+                    <span class="text">Olá, Doutor(a) <?php echo $doctorname ?>!</span>
                 </div>
 
                 <div class="activity-data">

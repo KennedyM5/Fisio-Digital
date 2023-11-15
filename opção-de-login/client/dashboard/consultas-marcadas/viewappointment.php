@@ -1,20 +1,14 @@
 <?php 
 session_start();
 require("../../conexões/db.php");
-$u=$_SESSION["nome"];
-$sql="SELECT * FROM `loginc` WHERE clientname='$u'";
-    $res = mysqli_query($con, $sql);
-
-$uid = null; // Initializing $uid
-if ($res) {
-    if (mysqli_num_rows($res)) {
-        while ($row = mysqli_fetch_assoc($res)) {
-            $uid = $row["clientid"];
-        }
-    }
+$clientid = $_SESSION['id'];
+$query    = "SELECT * FROM `loginc` WHERE clientid=$clientid;";
+$result = mysqli_query($con, $query) or die(mysqli_error($con));
+if($result)
+{
+$data = mysqli_fetch_assoc($result);
+$clientname = $data['clientname'];
 }
-$_SESSION["clientid"] = $uid; // Now $uid is defined
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -32,8 +26,8 @@ $_SESSION["clientid"] = $uid; // Now $uid is defined
             <img  width="200" class="ml-0 mt-2 mb-2" src="../../../../imagens/default_transparent.png">
         </div>
         <div class="col-sm-2">
-            <h3 class="mr-0 text-white">Olá, <?php echo $_SESSION['nome']; ?>!</h3>
-            <a href="../dashboard.php" class="btn btn-outline-light">Painel do Paciente</a>
+            <h3 class="mr-0">Olá, <?php echo $clientname; ?>!</h3>
+            <a href="../dashboard.php" class="btn btn-primary ">Voltar para Tela Inicial</a>
         </div>
     </div>
 </div>
@@ -49,7 +43,7 @@ $_SESSION["clientid"] = $uid; // Now $uid is defined
         </div>
         <div class="appt">
         <?php
-        $tdt=date("d-m-Y");
+        $tdt=date("Y-m-d");
         $cid=$_SESSION["clientid"];
         $sql="SELECT * FROM `appointment` WHERE date='$tdt' AND clientid='$cid'";
         $res = mysqli_query($con, $sql);
@@ -66,7 +60,7 @@ $_SESSION["clientid"] = $uid; // Now $uid is defined
                 </tr>
             </thead>";
                 while($row = mysqli_fetch_assoc($res)) {
-                    $formattedDate = date('d/m/Y', strtotime($row["date"]));
+                    $formattedDate = date('d-m-Y', strtotime($row["date"]));
                             echo "<tr>
                             <td class='mx-3'>" . $formattedDate . " </td>
                             <td>".$row["timeslot"]." </td>
@@ -109,7 +103,7 @@ $_SESSION["clientid"] = $uid; // Now $uid is defined
                             </tr>
                         </thead>";
                     while ($row = mysqli_fetch_assoc($res)) {
-                            $formattedDate = date('d/m/Y', strtotime($row["date"]));
+                            $formattedDate = date('d-m-Y', strtotime($row["date"]));
                             echo "<tr>
                                     <td class='mx-3'>" . $formattedDate . " </td>
                                     <td class='mx-3'>" . $row["timeslot"] . " </td>
