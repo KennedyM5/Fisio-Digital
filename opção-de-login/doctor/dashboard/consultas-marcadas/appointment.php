@@ -46,8 +46,8 @@ function findclientname($id)
                 <img width="200" class="ml-0 mt-2 mb-2" src="../../../../imagens/default_transparent.png">
             </div>
             <div class="col-sm-2">
-                <h3 class="mr-0 text-white">Olá, <?php echo $_SESSION['nome']; ?>!</h3>
-                <a href="../dashboard.php" class="btn btn-outline-light">Painel do Paciente</a>
+                <h3 class="mr-0 text-white">Olá, <?php echo $doctorname; ?>!</h3>
+                <a href="../dashboard.php" class="btn btn-outline-light">Painel do Doutor</a>
             </div>
         </div>
     </div>
@@ -56,8 +56,6 @@ function findclientname($id)
         <h2 class="pt-3 pb-3">Menu de Consultas</h2>
     </div>
 </div>
-
-<?php include('../../conexões/header.php'); ?>
 </div>
 
 
@@ -92,7 +90,7 @@ $qry1 =  "SELECT * FROM `appointment` WHERE `doctorid`='$doctorid'" ;
 			?><tr><td><?php echo $no;$no++;?></td><?php
 			?><td><?php echo $data1['appointmentid'] ?></td><?php
 			$appid=$data1['appointmentid']
-			?><td><?php echo date("d/m/Y", strtotime($data1['date'])) ?></td><?php
+			?><td><?php echo date("d-m-Y", strtotime($data1['date'])) ?></td><?php
 			?><td><?php echo findclientname($data1['clientid']); ?></td><?php
 			?><td><?php echo $data1['timeslot'] ?></td><?php
 			?><td><?php echo $data1['description'] ?></td><?php
