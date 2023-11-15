@@ -2,7 +2,6 @@
 session_start();
 require("../../conexões/db.php");
 $clientid = $_SESSION['id'];
-
 $query    = "SELECT * FROM `loginc` WHERE clientid=$clientid;";
 $result = mysqli_query($con, $query) or die(mysqli_error($con));
 if($result)
@@ -44,7 +43,7 @@ $clientname = $data['clientname'];
         </div>
         <div class="appt">
         <?php
-        $tdt=date("d-m-Y");
+        $tdt=date("Y-m-d");
         $cid=$_SESSION["clientid"];
         $sql="SELECT * FROM `appointment` WHERE date='$tdt' AND clientid='$cid'";
         $res = mysqli_query($con, $sql);
@@ -61,7 +60,7 @@ $clientname = $data['clientname'];
                 </tr>
             </thead>";
                 while($row = mysqli_fetch_assoc($res)) {
-                    $formattedDate = date('d/m/Y', strtotime($row["date"]));
+                    $formattedDate = date('d-m-Y', strtotime($row["date"]));
                             echo "<tr>
                             <td class='mx-3'>" . $formattedDate . " </td>
                             <td>".$row["timeslot"]." </td>
@@ -104,7 +103,7 @@ $clientname = $data['clientname'];
                             </tr>
                         </thead>";
                     while ($row = mysqli_fetch_assoc($res)) {
-                            $formattedDate = date('d/m/Y', strtotime($row["date"]));
+                            $formattedDate = date('d-m-Y', strtotime($row["date"]));
                             echo "<tr>
                                     <td class='mx-3'>" . $formattedDate . " </td>
                                     <td class='mx-3'>" . $row["timeslot"] . " </td>
