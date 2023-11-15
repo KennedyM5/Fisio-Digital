@@ -21,10 +21,10 @@ $clientname = $data['clientname'];
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 </head>
 <body>
-<div class="container-fluid pt-2 pb-2" style="background-color:rgba(209, 209, 170,0.3);">
+<div class="container-fluid pt-2 pb-2" style="background-color: #113838;">
     <div class="row">
         <div class="col-sm-10 ">
-            <img  width="150" class="ml-0 mt-2 mb-2" src="../images/logo.png">
+            <img  width="200" class="ml-0 mt-2 mb-2" src="../../../../imagens/default_transparent.png">
         </div>
         <div class="col-sm-2">
             <h3 class="mr-0">Olá, <?php echo $clientname; ?>!</h3>
@@ -32,8 +32,8 @@ $clientname = $data['clientname'];
         </div>
     </div>
 </div>
-<div class="container-fluid text-center" style="background-color:rgb(176, 192, 236);">
-    <div class="">
+<div class="container-fluid text-center" style="background-color: #79e3bd">
+    <div class="h-25 d-inline-block">
         <h2 class="pt-3 pb-3">Consultas do paciente</h2>
     </div>
 </div>
@@ -169,7 +169,7 @@ $clientname = $data['clientname'];
 
     </div>
 
-    </div>
+
 </div>
 
 

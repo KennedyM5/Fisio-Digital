@@ -138,7 +138,7 @@ function timeslots($duration,$cleanup,$start,$end)
 
   <body>
   <div class="hm">
-  <a href="dashboard.php" class="btn btn-primary">Voltar para tela inicial</a>
+  <a href="../dashboard.php" class="btn btn-primary">Painel do Paciente</a>
   </div>
 
     <div class="container">

@@ -4,7 +4,6 @@ session_start();
 if(isset($_GET["selectdoctor"]))
 {
     $_SESSION["docid"]=$_GET['docid'];
-
 }
 /* foreach($_SESSION as $s)
 {
@@ -59,9 +58,9 @@ function build_calendar($month, $year) {
     $calendar = "<table class='table table-bordered'>";
     $calendar .= "<center><h2>$monthName $year</h2>";
 
-    $calendar.= "<a class='btn btn-xs btn-primary' href='?month=".date('m', mktime(0, 0, 0, $month-1, 1, $year))."&year=".date('Y', mktime(0, 0, 0, $month-1, 1, $year))."'>Mês anterior</a> ";
-    $calendar.= " <a class='btn btn-xs btn-primary' href='?month=".date('m')."&year=".date('Y')."'>Mês atual</a> ";
-    $calendar.= "<a class='btn btn-xs btn-primary' href='?month=".date('m', mktime(0, 0, 0, $month+1, 1, $year))."&year=".date('Y', mktime(0, 0, 0, $month+1, 1, $year))."'>Próximo mês</a></center><br>";
+    $calendar.= "<a class='btn btn-xs btn-dark' href='?month=".date('m', mktime(0, 0, 0, $month-1, 1, $year))."&year=".date('Y', mktime(0, 0, 0, $month-1, 1, $year))."'>Mês anterior</a> ";
+    $calendar.= " <a class='btn btn-xs btn-dark' href='?month=".date('m')."&year=".date('Y')."'>Mês atual</a> ";
+    $calendar.= "<a class='btn btn-xs btn-dark' href='?month=".date('m', mktime(0, 0, 0, $month+1, 1, $year))."&year=".date('Y', mktime(0, 0, 0, $month+1, 1, $year))."'>Próximo mês</a></center><br>";
         
       $calendar .= "<tr>";
 
@@ -173,7 +172,8 @@ function checkSlots($mysqli, $date){
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
     <style>
        @media only screen and (max-width: 760px),
         (min-device-width: 802px) and (max-device-width: 1020px) {
@@ -288,8 +288,8 @@ function checkSlots($mysqli, $date){
 
 <body>
 <div class="mycontainer">
-<a href="dashboard.php" class="btn btn-primary">Voltar para tela inicial</a>
-<a href="logout.php" class="btn btn-primary" style="align-self:left">Sair</a> 
+<a href="book1.php" class="btn btn-dark">Voltar</a>
+<a href="../dashboard.php" class="btn btn-dark" style="align-self:left">Painel do Paciente</a> 
 </div>
     <div class="container">
         <div class="row">

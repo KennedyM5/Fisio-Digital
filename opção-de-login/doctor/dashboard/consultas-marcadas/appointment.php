@@ -40,18 +40,18 @@ function findclientname($id)
 
 ?>
 <body>
-<div class="container-fluid pt-2 pb-2" style="background-color:rgba(209, 209, 170,0.3);">
-    <div class="row">
-        <div class="col-sm-10 ">
-         <a href="dashboard.php">  <img  width="150" class="ml-0 mt-2 mb-2" src="../images/logo.png"></a> 
-        </div>
-        <div class="col-sm-2">
-		<h3 class="mr-0">Olá, <?php echo $doctorname ?>!</h3>
-            <a href="../../logout.php" class="btn btn-primary ">Sair</a>
+<div class="container-fluid pt-2 pb-2" style="background-color: #113838">
+        <div class="row">
+            <div class="col-sm-10 ">
+                <img width="200" class="ml-0 mt-2 mb-2" src="../../../../imagens/default_transparent.png">
+            </div>
+            <div class="col-sm-2">
+                <h3 class="mr-0 text-white">Olá, <?php echo $_SESSION['nome']; ?>!</h3>
+                <a href="../dashboard.php" class="btn btn-outline-light">Painel do Paciente</a>
+            </div>
         </div>
     </div>
-</div>
-<div class="container-fluid text-center" style="background-color:rgb(176, 192, 236);">
+    <div class="container-fluid text-center" style="background-color:#79e3bd">
     <div class="">
         <h2 class="pt-3 pb-3">Menu de Consultas</h2>
     </div>
