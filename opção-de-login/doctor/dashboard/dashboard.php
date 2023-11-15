@@ -2,6 +2,7 @@
 session_start();
 
 include('../conexões/protect.php');
+include('../conexões/db.php');
 //include auth_session.php file on all user panel pages
 ?>
 <!DOCTYPE html>
@@ -36,7 +37,7 @@ include('../conexões/protect.php');
 
         <div class="menu-items">
             <ul class="nav-links">
-                <li><a href="dashboard.php">
+                <li><a href="../../../index.html">
                     <i class="uil uil-estate"></i>
                     <span class="link-name">Tela inicial</span>
                 </a></li>
@@ -55,7 +56,7 @@ include('../conexões/protect.php');
             </ul>
             
             <ul class="logout-mode">
-                <li><a href="../logout.php">
+                <li><a href="../../menu.html">
                     <i class="uil uil-signout"></i>
                     <span class="link-name">Logout</span>
                 </a></li>
@@ -70,7 +71,7 @@ include('../conexões/protect.php');
 
             <div class="search-box">
                 <i class="uil uil-search"></i>
-                <input type="text" placeholder="Search here...">
+                <input type="text" placeholder="Pesquise aqui...">
             </div>
             
             <img src="images/profile.jpg" alt="">
@@ -99,11 +100,23 @@ include('../conexões/protect.php');
                 </div>
                 
             </div>
+            <?php
 
+    include('../conexões/db.php');
+    $doctorid = $_SESSION['id'];
+
+    $query    = "SELECT * FROM `logind` WHERE doctorid=$doctorid;";
+    $result = mysqli_query($con, $query) or die(mysqli_error($con));
+    if($result)
+{
+	$data = mysqli_fetch_assoc($result);
+	$doctorname = $data['doctorname'];
+}
+?>
             <div class="activity">
                 <div class="title">
                     <i class="uil uil-clock-three"></i>
-                    <span class="text">Recent Activity</span>
+                    <span class="text">Olá Doutor(a) <?php echo $doctorname ?></span>
                 </div>
 
                 <div class="activity-data">
@@ -165,61 +178,5 @@ include('../conexões/protect.php');
     <script src="../js/script2.js"></script>
 </body>
 </html>
-<?php
-	include('header.php');
-    /*
-    include('db.php');
-    $id = $_SESSION['id'];
-    
-    $query    = "SELECT * FROM logind WHERE id=$doctorid;";
-    $result = mysqli_query($con, $query);
-    if($result)
-    {
-        $data = mysqli_fetch_assoc($result);
-        $usuario = $data['doctorname'];
-        if($data['profile'])
-        {
-            $image=$data['profile'];
-        }
-        else
-        {
-            $image="default.jpg";
-        }
-    }
-    */
-?>
-<h1>Data : <?php echo date("d-m-Y"); ?></h1>
-<h1>Horário Atual : <?php 
-    date_default_timezone_set('America/Sao_Paulo');
-    $currentTime = date('h:i:s A', time());
-    echo $currentTime;
-?></h1>
-
-<?php
-    function findclientname($id)
-    {
-        $conn =  mysqli_connect("localhost","root","","fisio digital");
-        $qry =  "SELECT * FROM loginc WHERE id='$id'";
-        $ans = mysqli_query($conn,$qry);
-        if($ans)
-        {
-            $nam=mysqli_fetch_assoc($ans);
-            return $nam['usuario'];
-        }
-    }
-    
-    function finddoctorname($id)
-    {
-        $conn =  mysqli_connect("localhost","root","","fisio digital");
-        $qry =  "SELECT * FROM logind WHERE id=$id";
-        $ans = mysqli_query($conn,$qry);
-    
-        if($ans)
-        {
-            $nam=mysqli_fetch_assoc($ans);
-            return $nam['usuario'];
-        }
-    }
-?>
 </body>
 </html>
