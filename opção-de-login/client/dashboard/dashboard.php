@@ -154,39 +154,3 @@ include('../conexões/protect.php');
     <script src="../js/script2.js"></script>
 </body>
 </html>
-
-<h1>Data : <?php echo date("d-m-Y"); ?></h1>
-<h1>Horário Atual : <?php 
-    date_default_timezone_set('America/Sao_Paulo');
-    $currentTime = date('h:i:s A', time());
-    echo $currentTime;
-?></h1>
-
-<?php
-    function findclientname($id)
-    {
-        $conn =  mysqli_connect("localhost","root","","fisio digital");
-        $qry =  "SELECT * FROM loginc WHERE id='$id'";
-        $ans = mysqli_query($conn,$qry);
-        if($ans)
-        {
-            $nam=mysqli_fetch_assoc($ans);
-            return $nam['usuario'];
-        }
-    }
-    
-    function finddoctorname($id)
-    {
-        $conn =  mysqli_connect("localhost","root","","fisio digital");
-        $qry =  "SELECT * FROM logind WHERE id=$id";
-        $ans = mysqli_query($conn,$qry);
-    
-        if($ans)
-        {
-            $nam=mysqli_fetch_assoc($ans);
-            return $nam['usuario'];
-        }
-    }
-?>
-</body>
-</html>

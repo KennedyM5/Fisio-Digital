@@ -44,7 +44,7 @@ $clientname = $data['clientname'];
         <div class="appt">
         <?php
         $tdt=date("Y-m-d");
-        $cid=$_SESSION["clientid"];
+        $cid=$_SESSION["id"];
         $sql="SELECT * FROM `appointment` WHERE date='$tdt' AND clientid='$cid'";
         $res = mysqli_query($con, $sql);
         if($res)
@@ -56,7 +56,7 @@ $clientname = $data['clientname'];
                     <th class='mx-3'>DATA</th>
                     <th class='mx-3'>HORÁRIO</th>
                     <th class='mx-3'>DESCRIÇÃO</th>
-                    <th class='mx-3'>DOUTOR</th>
+                    <th class='mx-3'>ID DOUTOR</th>
                 </tr>
             </thead>";
                 while($row = mysqli_fetch_assoc($res)) {
@@ -86,8 +86,8 @@ $clientname = $data['clientname'];
     </div>
     <div class="appt">
         <?php
-        $cid = $_SESSION["clientid"];
-        $tdt = date("d-m-Y");
+        $cid = $_SESSION["id"];
+        $tdt = date("Y-m-d");
         $sql = "SELECT * FROM appointment WHERE  clientid='$cid' AND date>'$tdt'";
         $res = mysqli_query($con, $sql);
 
@@ -127,9 +127,9 @@ $clientname = $data['clientname'];
         </div>
         <div class="appt">
         <?php
-        $cid=$_SESSION["clientid"];
-        $tdt=date("d-m-Y");
-        $sql="SELECT * FROM `appointment` WHERE date<'$tdt' AND clientid='$cid'";
+        $cid=$_SESSION["id"];
+        $tdt=date("Y-m-d");
+        $sql = "SELECT * FROM appointment WHERE date < '$tdt' AND clientid = '$cid'";
         $res = mysqli_query($con, $sql);
         if($res)
         {   
@@ -144,7 +144,7 @@ $clientname = $data['clientname'];
                             </tr>
                         </thead>";
                 while($row = mysqli_fetch_assoc($res)) {
-                    $formattedDate = date('d/m/Y', strtotime($row["date"]));
+                    $formattedDate = date('d-m-Y', strtotime($row["date"]));
                             echo "<tr>
                             <td class='mx-3'>" . $formattedDate . " </td>
                             <td>".$row["timeslot"]." </td>
