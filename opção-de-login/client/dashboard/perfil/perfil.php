@@ -32,14 +32,14 @@ $execute1 = mysqli_query($con,$sql);
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Meu Perfil</title>
-	<link rel="shortcut icon" href="http://localhost/Fisio_Digital/src/images/favicon_32x32.png" type="image/x-icon">
+	<link rel="shortcut icon" href="http://localhost/Fisio-Digital/imagens/favicon_32x32.png" type="image/x-icon">
 	<link rel="stylesheet" href="perf.css">
 </head>
 
 <body>
 	<header>
 		<h1>
-			Dados do Usuario
+			Dados do Usuário
 		</h1>
 	</header>
 
@@ -64,7 +64,7 @@ $execute1 = mysqli_query($con,$sql);
   <div class="textfield" >
     <label>Data de Nascimento</label>
 	<div class="box">
-    <input type="text" class="form-control" required name="dob" value = <?php echo $dob?>>
+    <input type="date" class="form-control" required name="dob" value = <?php echo $dob?>>
   </div>
 
   <div class="textfield" >
@@ -75,7 +75,7 @@ $execute1 = mysqli_query($con,$sql);
   <div class="textfield" >
     <label>Endereço</label>
 	<div class="box">
-    <input type="text" class="form-control" required name="address" value = <?php echo $address?>>
+    <input type="search" class="form-control" required name="address" value = <?php echo $address?>>
   </div>
   <div class="textfield" >
     <label>Idade</label>
@@ -86,16 +86,20 @@ $execute1 = mysqli_query($con,$sql);
   <div class="textfield" >
     <label>Sexo</label>
 	<div class="box">
-    <input type="text" class="form-control" required name="sex" value=<?php echo $sex ?>>
+    <input type="text" class="form-control" required name="sex" value= <?php echo $sex?>>
+
   </div>
   </div>
 
 </div>
 
 	<footer>
-		<a href = "../dashboard.php">Voltar</a>
+		<a id = "Voltar" href="../dashboard.php">voltar</a>
+
 		<button type="submit" class="btn btn-primary"value="submit" name="submit">Enviar</button>
 		</form> 
+		
+		
 	</footer>
 	
 </body>

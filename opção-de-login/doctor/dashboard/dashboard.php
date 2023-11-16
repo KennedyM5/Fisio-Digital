@@ -18,7 +18,7 @@ include('../conexões/db.php');
      
     <!----===== Iconscout CSS ===== -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-
+    <link rel="shortcut icon" href="http://localhost/Fisio-Digital/imagens/favicon_32x32.png" type="image/x-icon">
     <title>Tela do Doutor</title> 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -120,20 +120,21 @@ include('../conexões/db.php');
                 </div>
 
                 <div class="activity-data">
+                    <div class="activity-data">
                     <div class="data names">
                         <span class="data-title">Como funciona os botões:</span>
                         <span class="data-list">Tela inicial</span>
                         <span class="data-list">Editar Perfil</span>
                         <span class="data-list">Consultas Marcadas</span>
-                        <span class="data-list">Adicionar Treinos Treinos</span>
+                        <span class="data-list">Adicionar Treinos</span>
                         <span class="data-list">Logout</span>
                     </div>
                     <div class="data email">
                         <span class="data-title"></span>
                         <span class="data-list">Te redireciona para a tela inicial da fisio digital.</span>
                         <span class="data-list">Permite que você altere suas informações pessoais.</span>
-                        <span class="data-list">Todas as consultas, futuras, passadas e as do dia atual, dando a opção de edita-las também.</span>
-                        <span class="data-list">Permite que o doutor cadastre treinos para que o paciente possa faze-los em casa.</span>
+                        <span class="data-list">Todas as consultas, futuras, passadas e as do dia atual.</span>
+                        <span class="data-list">Permite o Fisioterapeuta cadastrar treinos para seus pacientes.</span>
                         <span class="data-list">Te redireciona para a tela de login do doutor e do paciente.</span>
                     </div>
                 </div>

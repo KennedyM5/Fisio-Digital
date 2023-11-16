@@ -58,7 +58,9 @@ $execute1 = mysqli_query($con,$sql);
   <div class="textfield" >
     <label>Número de Telefone</label>
 	<div class="box">
-    <input type="text" class="form-control" required name="phone_no" value = <?php echo $phoneno?>>
+    <input type="text" class="form-control" required name="phone_no" value = <?php
+	
+	echo $phoneno?>>
   </div>
 
   <div class="textfield" >
@@ -87,7 +89,8 @@ $execute1 = mysqli_query($con,$sql);
 </div>
 
 	<footer>
-		<a href = "../dashboard.php">Voltar</a>
+	
+		<a id = "Voltar" href="../dashboard.php">voltar</a>
 		<button type="submit" class="btn btn-primary"value="submit" name="submit">Enviar</button>
 		</form> 
 	</footer>

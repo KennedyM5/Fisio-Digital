@@ -15,6 +15,7 @@ $clientname = $data['clientname'];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="http://localhost/Fisio-Digital/imagens/favicon_32x32.png" type="image/x-icon">
     <title>Consultas Marcadas</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -26,8 +27,8 @@ $clientname = $data['clientname'];
             <img  width="200" class="ml-0 mt-2 mb-2" src="../../../../imagens/default_transparent.png">
         </div>
         <div class="col-sm-2">
-            <h3 class="mr-0">Olá, <?php echo $clientname; ?>!</h3>
-            <a href="../dashboard.php" class="btn btn-primary ">Voltar para Tela Inicial</a>
+        <h3 class="mr-0 text-white">Olá, <?php echo $_SESSION['nome']; ?>!</h3>
+                <a href="../dashboard.php" class="btn btn-outline-light">Painel do Paciente</a>
         </div>
     </div>
 </div>

@@ -17,7 +17,7 @@ include('../conexões/protect.php');
      
     <!----===== Iconscout CSS ===== -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-
+    <link rel="shortcut icon" href="http://localhost/Fisio-Digital/imagens/favicon_32x32.png" type="image/x-icon">
     <title>Tela do Paciente</title> 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -44,6 +44,7 @@ include('../conexões/protect.php');
                     <i class="uil uil-user"></i>
                     <span class="link-name">Editar Perfil</span>
                 </a></li>
+
                 <li><a href="https://wa.me/5561998149548">
                     <i class="uil uil-comments"></i>
                     <span class="link-name">Chat</span>
