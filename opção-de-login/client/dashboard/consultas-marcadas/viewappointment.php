@@ -43,8 +43,8 @@ $clientname = $data['clientname'];
         </div>
         <div class="appt">
         <?php
+        $cid=$_SESSION["id"];
         $tdt=date("Y-m-d");
-        $cid=$_SESSION["clientid"];
         $sql="SELECT * FROM `appointment` WHERE date='$tdt' AND clientid='$cid'";
         $res = mysqli_query($con, $sql);
         if($res)
@@ -86,8 +86,8 @@ $clientname = $data['clientname'];
     </div>
     <div class="appt">
         <?php
-        $cid = $_SESSION["clientid"];
-        $tdt = date("d-m-Y");
+        $cid=$_SESSION["id"];
+        $tdt=date("Y-m-d");
         $sql = "SELECT * FROM appointment WHERE  clientid='$cid' AND date>'$tdt'";
         $res = mysqli_query($con, $sql);
 
@@ -127,8 +127,8 @@ $clientname = $data['clientname'];
         </div>
         <div class="appt">
         <?php
-        $cid=$_SESSION["clientid"];
-        $tdt=date("d-m-Y");
+        $cid=$_SESSION["id"];
+        $tdt=date("Y-m-d");
         $sql="SELECT * FROM `appointment` WHERE date<'$tdt' AND clientid='$cid'";
         $res = mysqli_query($con, $sql);
         if($res)
