@@ -139,9 +139,15 @@ footer button{
     border-radius: 8px;
     outline: none;
     text-transform: uppercase;
+    font-size: 15px;
 }
 
 footer a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    font-size: 15px;
     margin: 1.5rem;
     width: 10rem;
     height: 3.5rem;
@@ -155,6 +161,19 @@ footer a{
     border-radius: 8px;
     outline: none;
     text-transform: uppercase;
+    text-decoration: none;
+}
+
+.form-control{
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    color: white;
+}
+.form-control:focus {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
 }
 
 
