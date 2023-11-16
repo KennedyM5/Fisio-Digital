@@ -120,55 +120,22 @@ include('../conexões/db.php');
                 </div>
 
                 <div class="activity-data">
+                    <div class="activity-data">
                     <div class="data names">
-                        <span class="data-title">Name</span>
-                        <span class="data-list">Prem Shahi</span>
-                        <span class="data-list">Deepa Chand</span>
-                        <span class="data-list">Manisha Chand</span>
-                        <span class="data-list">Pratima Shahi</span>
-                        <span class="data-list">Man Shahi</span>
-                        <span class="data-list">Ganesh Chand</span>
-                        <span class="data-list">Bikash Chand</span>
+                        <span class="data-title">Como funciona os botões:</span>
+                        <span class="data-list">Tela inicial</span>
+                        <span class="data-list">Editar Perfil</span>
+                        <span class="data-list">Consultas Marcadas</span>
+                        <span class="data-list">Adicionar Treinos</span>
+                        <span class="data-list">Logout</span>
                     </div>
                     <div class="data email">
-                        <span class="data-title">Email</span>
-                        <span class="data-list">premshahi@gmail.com</span>
-                        <span class="data-list">deepachand@gmail.com</span>
-                        <span class="data-list">prakashhai@gmail.com</span>
-                        <span class="data-list">manishachand@gmail.com</span>
-                        <span class="data-list">pratimashhai@gmail.com</span>
-                        <span class="data-list">manshahi@gmail.com</span>
-                        <span class="data-list">ganeshchand@gmail.com</span>
-                    </div>
-                    <div class="data joined">
-                        <span class="data-title">Joined</span>
-                        <span class="data-list">2022-02-12</span>
-                        <span class="data-list">2022-02-12</span>
-                        <span class="data-list">2022-02-13</span>
-                        <span class="data-list">2022-02-13</span>
-                        <span class="data-list">2022-02-14</span>
-                        <span class="data-list">2022-02-14</span>
-                        <span class="data-list">2022-02-15</span>
-                    </div>
-                    <div class="data type">
-                        <span class="data-title">Type</span>
-                        <span class="data-list">New</span>
-                        <span class="data-list">Member</span>
-                        <span class="data-list">Member</span>
-                        <span class="data-list">New</span>
-                        <span class="data-list">Member</span>
-                        <span class="data-list">New</span>
-                        <span class="data-list">Member</span>
-                    </div>
-                    <div class="data status">
-                        <span class="data-title">Status</span>
-                        <span class="data-list">Liked</span>
-                        <span class="data-list">Liked</span>
-                        <span class="data-list">Liked</span>
-                        <span class="data-list">Liked</span>
-                        <span class="data-list">Liked</span>
-                        <span class="data-list">Liked</span>
-                        <span class="data-list">Liked</span>
+                        <span class="data-title"></span>
+                        <span class="data-list">Te redireciona para a tela inicial da fisio digital.</span>
+                        <span class="data-list">Permite que você altere suas informações pessoais.</span>
+                        <span class="data-list">Todas as consultas, futuras, passadas e as do dia atual.</span>
+                        <span class="data-list">Permite o Fisioterapeuta cadastrar treinos para seus pacientes.</span>
+                        <span class="data-list">Te redireciona para a tela de login do doutor e do paciente.</span>
                     </div>
                 </div>
             </div>
